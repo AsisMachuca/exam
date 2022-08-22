@@ -5,4 +5,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content> 
+  <ion-list class="post" *ngFor="let user of usrs">
+ <ion-list>{{user.name}}</ion-list>  
+ <ion-list>{{user.username}}</ion-list> 
+ <ion-list>{{user.email}}</ion-list> 
+ <ion-list>{{user.phone}}</ion-list>   
+ <ion-list>{{user.website}}</ion-list>
+     </ion-list
+></ion-content>

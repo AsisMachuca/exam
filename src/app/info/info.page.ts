@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-info',
   templateUrl: './info.page.html',
   styleUrls: ['./info.page.scss'],
 })
-export class InfoPage implements OnInit {
-  constructor(private router: Router, private http: HttpClient) {}
+export class InfoPage {
+  usrs: any;
+
+  constructor(private router: Router,public userService: UsersService) {}
   back() {
     this.router.navigateByUrl('/home');
   }
-  ngOnInit() {}
+  ionViewDidEnter() {
+    this.userService.getUsers().then((data) => {
+      this.usrs = data;
+    });
+  }
 }

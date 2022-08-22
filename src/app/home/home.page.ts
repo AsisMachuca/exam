@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  // name = [{}];
   usrs: any;
 
   constructor(public userService: UsersService, private router: Router) {}
@@ -18,8 +17,4 @@ export class HomePage {
       this.usrs = data;
     });
   }
-  //   this.userService.getUsers()
-  //   .then(
-  //     (data) => {this.usrs = data;}
-  //   );
 }
